@@ -1,0 +1,682 @@
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Useful gaming tips, strategies, settings advice and techniques for playing more effectively.">
+    <meta name="theme-color" content="#080b10">
+    <title>Tips & Tricks | GameAtlas HQ</title>
+    <style>
+:root {
+    --bg: #080b10;
+    --surface: #101620;
+    --surface-2: #151d29;
+    --surface-3: #1b2634;
+    --text: #f5f7fa;
+    --muted: #a8b2bf;
+    --faint: #778493;
+    --line: #273444;
+    --accent: #72efa8;
+    --accent-2: #93a7ff;
+    --black: #030507;
+    --font-sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-display: "Trebuchet MS", "Arial Narrow", "Arial Black", Impact, sans-serif;
+    --font-reading: Georgia, "Times New Roman", serif;
+    --page: 1240px;
+    --reading: 760px;
+    --radius-sm: 8px;
+    --radius-md: 15px;
+    --radius-lg: 24px;
+    --shadow: 0 24px 70px rgba(0, 0, 0, .28);
+    --ease: 220ms ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    margin: 0;
+    background:
+        radial-gradient(circle at 92% 2%, rgba(147, 167, 255, .09), transparent 33rem),
+        radial-gradient(circle at 8% 5%, rgba(114, 239, 168, .07), transparent 30rem),
+        var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+img { display: block; width: 100%; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+
+.prose p {
+    margin-bottom: 1.25em;
+    line-height: 1.75;
+}
+
+.skip-link {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 1000;
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+    background: var(--accent);
+    color: var(--black);
+    font-weight: 900;
+    transform: translateY(-160%);
+    transition: transform var(--ease);
+}
+.skip-link:focus { transform: translateY(0); }
+.site-shell { width: min(calc(100% - 40px), var(--page)); margin-inline: auto; }
+
+.site-header {
+    position: relative;
+    z-index: 20;
+    border-bottom: 1px solid var(--line);
+    background: rgba(8, 11, 16, .95);
+    backdrop-filter: blur(18px);
+}
+.utility-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 38px;
+    border-bottom: 1px solid rgba(39, 52, 68, .72);
+    color: var(--faint);
+    font-size: .7rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+.utility-bar p { margin: 0; }
+.masthead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    min-height: 96px;
+}
+.brand {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    width: min(100%, 360px);
+}
+
+.main-logo {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    height: 72px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+.footer-brand .brand {
+    width: min(100%, 300px);
+}
+
+.footer-brand .main-logo {
+    max-width: 300px;
+    height: 64px;
+}
+.primary-nav { display: flex; align-items: center; justify-content: flex-end; gap: 23px; }
+.primary-nav a {
+    position: relative;
+    padding-block: 10px;
+    color: var(--muted);
+    font-size: .86rem;
+    font-weight: 750;
+    transition: color var(--ease);
+}
+.primary-nav a::after {
+    position: absolute;
+    right: 0;
+    bottom: 3px;
+    left: 0;
+    height: 2px;
+    background: var(--accent);
+    content: "";
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--ease);
+}
+.primary-nav a:hover, .primary-nav a[aria-current="page"] { color: var(--text); }
+.primary-nav a:hover::after, .primary-nav a[aria-current="page"]::after { transform: scaleX(1); }
+.category-bar { border-top: 1px solid rgba(39, 52, 68, .72); background: var(--surface); }
+.category-nav { display: flex; gap: 7px; padding-block: 11px; overflow-x: auto; scrollbar-width: none; }
+.category-nav::-webkit-scrollbar { display: none; }
+.category-nav a {
+    flex: 0 0 auto;
+    padding: 8px 13px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    color: var(--muted);
+    font-size: .73rem;
+    font-weight: 900;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    transition: background var(--ease), border-color var(--ease), color var(--ease);
+}
+.category-nav a:hover, .category-nav a[aria-current="page"] {
+    border-color: rgba(114, 239, 168, .36);
+    background: rgba(114, 239, 168, .08);
+    color: var(--accent);
+}
+
+.page-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(260px, .7fr);
+    gap: 52px;
+    align-items: end;
+    padding-block: clamp(44px, 6vw, 78px) clamp(34px, 4vw, 52px);
+}
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 15px;
+    color: var(--accent);
+    font-size: .69rem;
+    font-weight: 900;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+}
+.eyebrow::before { width: 23px; height: 2px; background: currentColor; content: ""; }
+.page-intro h1, .static-hero h1 {
+    max-width: 940px;
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(2.6rem, 5.5vw, 5.3rem);
+    font-weight: 900;
+    letter-spacing: -.055em;
+    line-height: .96;
+    text-transform: uppercase;
+}
+.page-intro-description, .static-hero > p {
+    max-width: 720px;
+    margin: 0;
+    color: var(--muted);
+    font-size: clamp(1rem, 1.8vw, 1.17rem);
+    line-height: 1.78;
+}
+.section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 22px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+}
+.section-heading h2 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(1.7rem, 2.8vw, 2.45rem);
+    font-weight: 900;
+    letter-spacing: -.04em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+.section-heading p { max-width: 500px; margin: 0; color: var(--muted); font-size: .92rem; }
+.section-link {
+    flex: 0 0 auto;
+    color: var(--accent);
+    font-size: .72rem;
+    font-weight: 900;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+.section-link::after { content: " →"; }
+
+.latest-section { padding-bottom: 72px; }
+.newsroom-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 18px;
+}
+.newsroom-card {
+    grid-column: span 3;
+    display: block;
+    min-width: 0;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--surface);
+    transition: border-color var(--ease), background var(--ease), transform var(--ease);
+}
+.newsroom-card--wide { grid-column: span 6; }
+.newsroom-card:hover {
+    border-color: rgba(147, 167, 255, .5);
+    background: var(--surface-2);
+    transform: translateY(-4px);
+}
+.newsroom-card article, .feed-card article { height: 100%; }
+.newsroom-media {
+    aspect-ratio: 16 / 9;
+    margin: 0;
+    overflow: hidden;
+    background: var(--surface-2);
+}
+.newsroom-card--wide .newsroom-media { aspect-ratio: 16 / 7.4; }
+.newsroom-media img { height: 100%; object-fit: cover; transition: transform 600ms ease; }
+.newsroom-card:hover .newsroom-media img, .feed-card:hover .newsroom-media img { transform: scale(1.04); }
+.newsroom-copy {
+    display: flex;
+    flex-direction: column;
+    min-height: 220px;
+    padding: 22px;
+}
+.newsroom-card--wide .newsroom-copy { min-height: 210px; }
+.story-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 15px;
+    align-items: center;
+    margin: 0 0 13px;
+    color: var(--faint);
+    font-size: .68rem;
+    font-weight: 900;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+.category-label { color: var(--accent); }
+.newsroom-copy h3 {
+    margin: 0 0 12px;
+    font-family: var(--font-display);
+    font-size: clamp(1.18rem, 1.7vw, 1.55rem);
+    font-weight: 900;
+    letter-spacing: -.035em;
+    line-height: 1.06;
+    text-transform: uppercase;
+}
+.newsroom-card--wide .newsroom-copy h3 { font-size: clamp(1.45rem, 2.5vw, 2.15rem); }
+.newsroom-copy > p { margin: 0; color: var(--muted); font-size: .86rem; line-height: 1.65; }
+.read-prompt {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 20px;
+    color: var(--accent);
+    font-size: .72rem;
+    font-weight: 900;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+.read-prompt::after { content: "→"; font-size: 1.05rem; transition: transform var(--ease); }
+.newsroom-card:hover .read-prompt::after, .feed-card:hover .read-prompt::after { transform: translateX(5px); }
+
+.category-feeds {
+    padding-block: 10px 84px;
+    border-top: 1px solid var(--line);
+}
+.category-feed { padding-top: 54px; }
+.category-feed-header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 22px;
+    margin-bottom: 20px;
+    padding-bottom: 13px;
+    border-bottom: 3px solid var(--surface-3);
+    position: relative;
+}
+.category-feed-header::after {
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 72px;
+    height: 3px;
+    background: var(--accent);
+    content: "";
+}
+.category-feed-header h2 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(1.7rem, 3vw, 2.55rem);
+    font-weight: 900;
+    letter-spacing: -.045em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+.category-feed-header p { max-width: 520px; margin: 7px 0 0; color: var(--muted); font-size: .86rem; }
+.category-feed-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+.feed-card {
+    display: block;
+    min-width: 0;
+    border-top: 1px solid var(--line);
+    background: transparent;
+    transition: background var(--ease), transform var(--ease);
+}
+.feed-card:hover { background: rgba(255, 255, 255, .025); transform: translateY(-3px); }
+.feed-card .newsroom-media { border-radius: var(--radius-sm); }
+.feed-card .newsroom-copy { min-height: 225px; padding: 18px 2px 0; }
+.feed-card .newsroom-copy h3 { font-size: clamp(1.05rem, 1.5vw, 1.35rem); }
+.feed-card .newsroom-copy > p { font-size: .82rem; }
+
+.category-directory { padding-block: 70px 94px; border-top: 1px solid var(--line); }
+.category-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.category-card {
+    display: block;
+    min-height: 205px;
+    padding: 28px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: linear-gradient(145deg, rgba(147, 167, 255, .06), transparent 62%), var(--surface);
+    transition: border-color var(--ease), transform var(--ease), background var(--ease);
+}
+.category-card:hover {
+    border-color: rgba(114, 239, 168, .47);
+    background: linear-gradient(145deg, rgba(114, 239, 168, .07), transparent 62%), var(--surface-2);
+    transform: translateY(-4px);
+}
+.category-number { display: block; margin-bottom: 34px; color: var(--faint); font-size: .67rem; font-weight: 900; letter-spacing: .12em; }
+.category-card h3 {
+    margin: 0 0 8px;
+    font-family: var(--font-display);
+    font-size: 1.58rem;
+    font-weight: 900;
+    letter-spacing: -.035em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+.category-card p { max-width: 315px; margin: 0; color: var(--muted); font-size: .87rem; line-height: 1.67; }
+.empty-state { padding: 60px 25px; border: 1px dashed var(--line); border-radius: var(--radius-lg); background: var(--surface); text-align: center; }
+.empty-state h2 { margin-top: 0; font-family: var(--font-display); font-size: 2rem; text-transform: uppercase; }
+.empty-state p { margin-bottom: 0; color: var(--muted); }
+
+.article-main { padding-block: 62px 102px; }
+.return-link { display: inline-flex; align-items: center; gap: 9px; margin-bottom: 38px; color: var(--muted); font-size: .75rem; font-weight: 900; letter-spacing: .11em; text-transform: uppercase; transition: color var(--ease); }
+.return-link::before { content: "←"; font-size: 1rem; }
+.return-link:hover { color: var(--accent); }
+.article-header { max-width: 990px; margin-bottom: 44px; }
+.article-header h1 {
+    margin: 0 0 22px;
+    font-family: var(--font-display);
+    font-size: clamp(2.7rem, 6.4vw, 5.9rem);
+    font-weight: 900;
+    letter-spacing: -.06em;
+    line-height: .95;
+    text-transform: uppercase;
+}
+.article-deck { max-width: 770px; margin: 22px 0 0; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.3rem); line-height: 1.72; }
+.article-cover { margin: 0 0 56px; border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; background: var(--surface); box-shadow: var(--shadow); }
+.article-cover img { max-height: 760px; object-fit: cover; }
+.article-layout { display: grid; grid-template-columns: minmax(0, var(--reading)) minmax(220px, 1fr); gap: clamp(46px, 8vw, 120px); align-items: start; }
+.prose { min-width: 0; color: #d8dee6; font-family: var(--font-reading); font-size: clamp(1.05rem, 1.7vw, 1.18rem); }
+.prose h2, .prose h3, .prose h4 {
+    color: var(--text);
+    font-family: var(--font-display);
+    font-weight: 900;
+    letter-spacing: -.035em;
+    line-height: 1.08;
+    text-transform: uppercase;
+}
+.prose h2 { margin: 2.1em 0 .7em; font-size: clamp(1.75rem, 3.2vw, 2.45rem); }
+.prose h3 { margin: 1.8em 0 .65em; font-size: clamp(1.35rem, 2.4vw, 1.82rem); }
+.prose h4 { margin: 1.6em 0 .6em; font-size: 1.2rem; }
+.prose ul, .prose ol { margin: 0 0 1.5em; padding-left: 1.35em; }
+.prose li { margin-bottom: .55em; padding-left: .25em; }
+.prose a { color: var(--accent); text-decoration: underline; text-decoration-color: rgba(114, 239, 168, .4); text-underline-offset: 4px; }
+.prose a:hover { text-decoration-color: var(--accent); }
+.prose blockquote { margin: 2em 0; padding: 24px 28px; border-left: 3px solid var(--accent); background: var(--surface); color: var(--text); font-size: 1.12em; font-style: italic; }
+.prose code { padding: .12em .35em; border: 1px solid var(--line); border-radius: 5px; background: var(--surface-2); color: var(--accent); font-family: Consolas, monospace; font-size: .88em; }
+.prose pre { margin: 1.8em 0; padding: 22px; border: 1px solid var(--line); border-radius: var(--radius-md); overflow-x: auto; background: var(--black); }
+.prose pre code { padding: 0; border: 0; background: transparent; }
+.prose img { height: auto; margin: 2em 0; border: 1px solid var(--line); border-radius: var(--radius-md); }
+.article-aside, .static-aside { position: sticky; top: 28px; padding: 25px; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); }
+.article-aside h2, .static-aside h2 {
+    margin: 0 0 14px;
+    font-family: var(--font-display);
+    font-size: 1.32rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.article-aside p { margin: 0; color: var(--muted); font-size: .85rem; line-height: 1.67; }
+.article-aside nav, .static-aside nav { display: grid; gap: 7px; margin-top: 20px; }
+.article-aside a, .static-aside a { padding-block: 8px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: .79rem; font-weight: 800; transition: color var(--ease); }
+.article-aside a:hover, .static-aside a:hover { color: var(--accent); }
+
+.static-main { padding-bottom: 102px; }
+.static-hero { max-width: 990px; padding-block: clamp(58px, 8vw, 100px) 52px; }
+.static-hero > p { margin-top: 28px; }
+.static-layout { display: grid; grid-template-columns: minmax(0, var(--reading)) minmax(230px, 1fr); gap: clamp(46px, 8vw, 120px); align-items: start; }
+.principle-grid, .glossary-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-block: 30px; }
+.principle-card, .glossary-card { padding: 24px; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); }
+.principle-card h3, .glossary-card h3 {
+    margin: 0 0 9px;
+    color: var(--text);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 900;
+    line-height: 1.08;
+    text-transform: uppercase;
+}
+.principle-card p, .glossary-card p { margin: 0; color: var(--muted); font-family: var(--font-sans); font-size: .84rem; line-height: 1.65; }
+.glossary-letter { margin: 2em 0 .8em; color: var(--accent); font-family: var(--font-display); font-size: .8rem; font-weight: 900; letter-spacing: .15em; text-transform: uppercase; }
+.policy-note { margin: 2em 0; padding: 22px 24px; border: 1px solid rgba(114, 239, 168, .31); border-radius: var(--radius-md); background: rgba(114, 239, 168, .06); }
+.policy-note p { margin: 0; color: var(--muted); font-family: var(--font-sans); font-size: .9rem; line-height: 1.7; }
+
+.site-footer { border-top: 1px solid var(--line); background: var(--black); }
+.footer-grid { display: grid; grid-template-columns: 1.2fr .8fr .8fr; gap: 56px; padding-block: 66px 49px; }
+.footer-brand .brand { width: clamp(180px, 20vw, 255px); }
+.footer-brand .main-logo { max-width: 250px; height: 54px; }
+.footer-brand p { max-width: 435px; margin: 18px 0 0; color: var(--faint); font-size: .83rem; line-height: 1.72; }
+.footer-column h2 { margin: 0 0 17px; color: var(--text); font-family: var(--font-display); font-size: .78rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+.footer-column nav { display: grid; gap: 10px; }
+.footer-column a { width: fit-content; color: var(--muted); font-size: .84rem; transition: color var(--ease); }
+.footer-column a:hover { color: var(--accent); }
+.footer-bottom { display: flex; justify-content: space-between; gap: 22px; padding-block: 22px 28px; border-top: 1px solid var(--line); color: var(--faint); font-size: .7rem; }
+.footer-bottom p { margin: 0; }
+
+@media (max-width: 1040px) {
+    .newsroom-card { grid-column: span 4; }
+    .newsroom-card--wide { grid-column: span 6; }
+    .category-feed-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 980px) {
+    .masthead { align-items: flex-start; flex-direction: column; gap: 20px; padding-block: 24px; }
+    .primary-nav { justify-content: flex-start; width: 100%; overflow-x: auto; scrollbar-width: none; }
+    .primary-nav::-webkit-scrollbar { display: none; }
+    .primary-nav a { flex: 0 0 auto; }
+    .page-intro { grid-template-columns: 1fr; gap: 24px; }
+    .newsroom-card, .newsroom-card--wide { grid-column: span 6; }
+    .newsroom-card--wide .newsroom-media { aspect-ratio: 16 / 9; }
+    .category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .article-layout, .static-layout { grid-template-columns: 1fr; }
+    .article-aside, .static-aside { position: static; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-brand { grid-column: 1 / -1; }
+}
+
+@media (max-width: 680px) {
+    .brand {
+        width: min(100%, 250px);
+    }
+
+    .main-logo {
+        max-width: 250px;
+        height: 54px;
+    }
+
+    .footer-brand .brand {
+        width: min(100%, 230px);
+    }
+
+    .footer-brand .main-logo {
+        max-width: 230px;
+        height: 52px;
+    }
+
+    .site-shell { width: min(calc(100% - 24px), var(--page)); }
+    .utility-bar { min-height: 34px; }
+    .utility-bar p:last-child { display: none; }
+    .masthead { min-height: auto; }
+    .brand { width: min(100%, 250px); }
+    .main-logo { max-width: 250px; height: 54px; }
+    .primary-nav { gap: 18px; }
+    .primary-nav a { font-size: .79rem; }
+    .page-intro { padding-block: 44px 34px; }
+    .page-intro h1, .static-hero h1 { font-size: clamp(2.35rem, 12vw, 4rem); }
+    .section-heading, .category-feed-header { align-items: flex-start; flex-direction: column; gap: 8px; }
+    .newsroom-grid { gap: 16px; }
+    .newsroom-card, .newsroom-card--wide { grid-column: 1 / -1; }
+    .newsroom-copy, .newsroom-card--wide .newsroom-copy { min-height: 205px; padding: 20px; }
+    .latest-section { padding-bottom: 52px; }
+    .category-feeds { padding-bottom: 62px; }
+    .category-feed { padding-top: 44px; }
+    .category-feed-grid { grid-template-columns: 1fr; }
+    .feed-card .newsroom-copy { min-height: 190px; }
+    .category-directory { padding-block: 54px 70px; }
+    .category-grid, .principle-grid, .glossary-grid { grid-template-columns: 1fr; }
+    .article-main { padding-block: 38px 70px; }
+    .article-header h1 { font-size: clamp(2.35rem, 12vw, 4.15rem); }
+    .article-cover { margin-bottom: 38px; border-radius: var(--radius-md); }
+    .static-hero { padding-block: 50px 38px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 36px; padding-block: 50px 38px; }
+    .footer-brand { grid-column: auto; }
+    .footer-bottom { align-items: flex-start; flex-direction: column; gap: 8px; }
+}
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+        <section class="site-shell utility-bar" aria-label="Website information">
+            <p>Independent gaming publication</p>
+            <p>Guides, reviews and practical advice</p>
+        </section>
+        <section class="site-shell masthead">
+            <a class="brand" href="index.html" aria-label="GameAtlas HQ home">
+                <img class="main-logo" src="images/main-logo.png" alt="GameAtlas HQ" width="360" height="72">
+            </a>
+            <nav class="primary-nav" aria-label="Primary navigation">
+                <a href="index.html">Home</a>
+                <a href="about-GAHQ.html">About</a>
+                <a href="gaming-glossary.html">Gaming Glossary</a>
+                <a href="editorial-policy.html">Editorial Policy</a>
+            </nav>
+        </section>
+        <section class="category-bar">
+            <nav class="site-shell category-nav" aria-label="Category navigation">
+                <a href="gaming-news.html">Gaming News</a>
+                <a href="guides.html">Guides</a>
+                <a href="tips-tricks.html" aria-current="page">Tips &amp; Tricks</a>
+                <a href="best-games.html">Best Games</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="gaming-gear.html">Gaming Gear</a>
+            </nav>
+        </section>
+    </header>
+        <main id="main-content">
+        <section class="site-shell page-intro">
+            <header>
+                <span class="eyebrow">Gaming tips and strategies</span>
+                <h1>Tips & Tricks</h1>
+            </header>
+            <p class="page-intro-description">Useful gaming tips, strategies, settings advice and techniques for playing more effectively.</p>
+        </section>
+
+        
+        
+
+        
+            <section class="site-shell latest-section" aria-labelledby="latest-heading">
+                <header class="section-heading">
+                    <h2 id="latest-heading">Tips & Tricks</h2>
+                    <p>All published articles in this category.</p>
+                </header>
+
+                <section class="newsroom-grid" aria-label="Latest article archive">
+                    
+                        <a class="newsroom-card" href="blogs/gaming-settings-to-change-before-you-start.html" data-category="Tips & Tricks" aria-label="Read Gaming Settings to Change Before You Start a New Game">
+                            <article>
+                                <figure class="newsroom-media">
+                                    <img src="images/gaming-settings-to-change-before-you-start.jpg" alt="Gaming Settings to Change Before You Start a New Game" loading="eager" fetchpriority="high">
+                                </figure>
+                                <section class="newsroom-copy">
+                                    <header>
+                                        <p class="story-meta">
+                                            <span class="category-label">Tips & Tricks</span>
+                                            <time>27. June 2026</time>
+                                        </p>
+                                        <h3>Gaming Settings to Change Before You Start a New Game</h3>
+                                    </header>
+                                    <p>A practical checklist for configuring performance, controls, accessibility, audio and visual settings before beginning a new game.</p>
+                                    <span class="read-prompt">Read article</span>
+                                </section>
+                            </article>
+                        </a>
+                    
+                </section>
+            </section>
+        
+
+        
+
+        <section class="category-directory" aria-labelledby="categories-heading">
+            <section class="site-shell">
+                <header class="section-heading">
+                    <h2 id="categories-heading">Browse by category</h2>
+                    <p>Each category has its own chronological article archive.</p>
+                </header>
+                <nav class="category-grid" aria-label="Browse article categories">
+                    <a class="category-card" href="gaming-news.html"><span class="category-number">01 / CATEGORY</span><h3>Gaming News</h3><p>Relevant announcements, release updates, patches and major industry developments.</p></a>
+                    <a class="category-card" href="guides.html"><span class="category-number">02 / CATEGORY</span><h3>Guides</h3><p>Step-by-step instructions, walkthroughs, solutions, builds and troubleshooting help.</p></a>
+                    <a class="category-card" href="tips-tricks.html"><span class="category-number">03 / CATEGORY</span><h3>Tips &amp; Tricks</h3><p>Beginner advice, advanced tactics, hidden mechanics and mistakes worth avoiding.</p></a>
+                    <a class="category-card" href="best-games.html"><span class="category-number">04 / CATEGORY</span><h3>Best Games</h3><p>Focused recommendations for different platforms, genres, budgets and play styles.</p></a>
+                    <a class="category-card" href="reviews.html"><span class="category-number">05 / CATEGORY</span><h3>Reviews</h3><p>Clear assessments of games, downloadable content, services and selected hardware.</p></a>
+                    <a class="category-card" href="gaming-gear.html"><span class="category-number">06 / CATEGORY</span><h3>Gaming Gear</h3><p>Buying advice, comparisons and practical setup guidance for gaming equipment.</p></a>
+                </nav>
+            </section>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <section class="site-shell footer-grid">
+            <section class="footer-brand">
+                <a class="brand" href="index.html" aria-label="GameAtlas HQ home">
+                <img class="main-logo" src="images/main-logo.png" alt="GameAtlas HQ" width="300" height="64" loading="lazy">
+            </a>
+                <p>An independent editorial gaming publication covering useful guides, practical tips, considered reviews, recommendations and gaming gear.</p>
+            </section>
+            <section class="footer-column">
+                <h2>Categories</h2>
+                <nav aria-label="Footer category navigation">
+                <a href="gaming-news.html">Gaming News</a>
+                <a href="guides.html">Guides</a>
+                <a href="tips-tricks.html">Tips &amp; Tricks</a>
+                <a href="best-games.html">Best Games</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="gaming-gear.html">Gaming Gear</a>
+                </nav>
+            </section>
+            <section class="footer-column">
+                <h2>Information</h2>
+                <nav aria-label="Footer information navigation">
+                    <a href="about-GAHQ.html">About GameAtlas HQ</a>
+                    <a href="gaming-glossary.html">Gaming Glossary</a>
+                    <a href="editorial-policy.html">Editorial Policy</a>
+                    <a href="tos-privacy.html">Terms &amp; Privacy</a>
+                </nav>
+            </section>
+        </section>
+        <section class="site-shell footer-bottom">
+            <p>&copy; 2026 GameAtlasHQ.com</p>
+            <p>No visitor tracking. No personal data collection.</p>
+        </section>
+    </footer>
+</body>
+</html>

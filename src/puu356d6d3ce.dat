@@ -1,0 +1,34 @@
+
+<p>A game can report a high average frame rate and still feel rough. Stutter occurs when individual frames arrive unevenly, producing visible pauses, judder, or sudden input inconsistency. The cause may be shader compilation, asset streaming, processor spikes, insufficient video memory, background software, thermal throttling, or a game-specific fault.</p>
+<p>There is no universal “stutter fix.” The reliable approach is to reproduce the problem, classify it, and change one variable at a time.</p>
+<h2>Distinguish low frame rate from poor frame pacing</h2>
+<p>Low frame rate is a sustained lack of frames. Poor frame pacing means frames arrive at inconsistent intervals. A counter showing 90 frames per second can hide repeated spikes that feel worse than a stable 60.</p>
+<p>Use a frame-time graph from a trusted performance tool if you are comfortable doing so. Otherwise, choose a repeatable route and watch whether pauses happen at the same location, during camera turns, when new effects appear, or at regular intervals.</p>
+<h2>Allow shader compilation to finish</h2>
+<p>Many modern games compile shaders before play or during the first encounter with an effect. A driver update can invalidate a shader cache, causing temporary stutter to return. If the game offers a shader-compilation screen, let it complete without launching into the campaign.</p>
+<p>Stutter that occurs once when each new effect appears may be compilation-related. Stutter that repeats every time you cross the same boundary may involve asset streaming or the game engine. Do not repeatedly delete caches unless official support recommends it; doing so can force compilation to start again.</p>
+<h2>Set a sustainable frame-rate cap</h2>
+<p>An uncapped graphics processor running near full load may have little headroom for sudden scene complexity. Cap the frame rate slightly below a level the system can maintain. This can reduce power use and improve consistency.</p>
+<p>Test the game's limiter first, then a driver or external limiter if measured reviews show the in-game option is poor. Do not stack several caps. Combine the cap with adaptive synchronization where supported.</p>
+<h2>Reduce settings tied to memory and streaming</h2>
+<p>Exceeding video-memory capacity can force assets to move between system memory and the graphics card, causing severe spikes. Lower texture quality, ray-tracing features, high-resolution texture packs, and settings that increase world detail. Restart the game after major texture changes when recommended.</p>
+<p>Install the game on an SSD and keep free space available. Storage will not solve every stutter, but slow or overloaded drives can worsen asset-streaming pauses. Close large file transfers and background scans during testing.</p>
+<h2>Check processor load and background interruptions</h2>
+<p>Browser video, recording software, RGB utilities, hardware monitoring, launchers, and overlays can create periodic spikes. Close nonessential applications and disable overlays one at a time. Keep security software enabled, but schedule intensive scans outside play sessions.</p>
+<p>If one processor core is saturated while the graphics processor is underused, lowering resolution may not help. Reduce crowd density, simulation, view distance, or other processor-heavy settings instead.</p>
+<h2>Verify Windows graphics behaviour</h2>
+<p>Microsoft's <a href="https://support.microsoft.com/en-us/windows/optimizations-for-windowed-games-in-windows-11-3f006843-2c7e-4ed0-9a5e-f9389e535952">windowed-game optimization settings</a> can affect compatible DirectX titles. Test borderless and exclusive fullscreen where available, and confirm that a laptop is using its high-performance graphics processor.</p>
+<p>Do not apply random registry edits or disable core security features from an unverified video. Reversible settings and official driver controls are easier to test and undo.</p>
+<h2>Update drivers, but preserve a rollback path</h2>
+<p>Install graphics and chipset drivers from the hardware or computer manufacturer. Read release notes for the game. If stutter began immediately after an update and other players report the same issue, a supported rollback may be reasonable.</p>
+<p>Use clean installation options only when necessary. Reinstalling drivers repeatedly can waste time when the fault is in the game patch or shader process.</p>
+<h2>Watch temperatures and power limits</h2>
+<p>A laptop or compact PC may begin smoothly and stutter after heat builds. Monitor clock speeds and temperatures with a reputable tool. Keep vents clear, use the correct charger, and test on a hard surface.</p>
+<p>If clock speed falls as temperature rises, improve airflow or service the cooling system before changing software. Our broader guide to <a href="improve-pc-gaming-performance-without-upgrading.html">improving PC gaming performance</a> covers safe baseline checks.</p>
+<h2>Include the monitor in the diagnosis</h2>
+<p>Variable refresh rate can smooth changing output within its operating range, but flicker, low-frame-rate compensation, and incorrect refresh settings can create their own symptoms. Confirm the monitor is running at the intended rate and that the cable and port support it.</p>
+<p>The monitor guide on <a href="how-to-choose-a-gaming-monitor.html">refresh rate, adaptive sync, and response behaviour</a> explains why display specifications need to match real frame output.</p>
+<h2>Know when the game is the problem</h2>
+<p>Test another demanding game. If only one title stutters in the same locations across many systems, wait for a patch and report the issue with useful details: hardware, driver, settings, game version, location, and a repeatable sequence.</p>
+<p>Do not buy new hardware until you can show that the current component is the limit. A stronger graphics card cannot eliminate traversal stutter built into an engine, and more memory cannot fix a broken patch.</p>
+<p>Good troubleshooting produces a smaller list of causes, not a larger collection of tweaks. Establish a baseline, preserve working settings, and stop when the game becomes consistent enough that the remaining issue no longer damages the experience.</p>

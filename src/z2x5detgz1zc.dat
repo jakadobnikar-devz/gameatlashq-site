@@ -1,0 +1,36 @@
+
+<p>Online games can fail because of the game servers, platform network, home router, internet provider, Wi-Fi conditions, account permissions, firewall, or another player's connection. Changing random router settings before identifying the layer can create security problems and make the fault harder to explain.</p>
+<p>Use a top-to-bottom test: service status, account, game, device, local network, then internet path. Stop when the evidence identifies the problem.</p>
+<h2>Check whether the service is down</h2>
+<p>Open the official status pages for the game, launcher, and platform. Look for authentication, matchmaking, social, or store incidents in your region. A game can launch while party services remain unavailable.</p>
+<p>Check the developer's official support account for maintenance. Community reports can confirm a broad issue, but they should not replace an official status when one exists.</p>
+<h2>Restart the game and network cleanly</h2>
+<p>Close the game fully rather than leaving it suspended. Restart the console or PC. Power-cycle the modem and router only if you understand which device provides the connection: unplug power, wait, reconnect the modem first, then the router, and allow them to finish starting.</p>
+<p>Do not repeatedly factory-reset network equipment. A restart clears temporary state; a reset erases the configuration and may require internet-provider credentials.</p>
+<h2>Test another game and another device</h2>
+<p>If every online game fails on one device, investigate that device or network. If one game fails across several devices, the game service or account is more likely. If one person cannot join a group but others can, compare versions, regions, cross-play settings, and account permissions.</p>
+<p>This simple comparison prevents changing a router to fix a single corrupted game installation.</p>
+<h2>Prefer Ethernet for diagnosis</h2>
+<p>Connect directly to the router with Ethernet when possible. If the problem disappears, Wi-Fi signal, interference, roaming, or power saving is involved. Move closer to the access point, use a less crowded band, and avoid repeaters that add unstable latency.</p>
+<p>High download speed does not guarantee good gaming. Latency, jitter, and packet loss affect responsiveness and voice chat more directly. Pause large uploads, cloud backups, and video streams while testing.</p>
+<h2>Understand NAT without chasing an “open” label blindly</h2>
+<p>Network address translation allows many home devices to share one public address. Restrictive NAT can make hosting, party chat, or peer-to-peer connections difficult. Xbox provides an official guide for <a href="https://support.xbox.com/en-US/help/hardware-network/connect-network/xbox-one-nat-error">troubleshooting NAT errors and multiplayer issues</a>.</p>
+<p>Enable Universal Plug and Play only if the router is current and you accept its operation. Avoid placing a console in a DMZ or manually opening large port ranges without official instructions. Double NAT can occur when both an internet-provider gateway and your router perform routing; bridge or access-point configuration may require provider support.</p>
+<h2>Check account and privacy permissions</h2>
+<p>Child accounts, family settings, communication restrictions, cross-network permissions, suspensions, or expired multiplayer memberships can block access. Verify that the account can join multiplayer and communicate with other platforms where needed.</p>
+<p>Cross-play and cross-progression are separate. A game may allow players to meet across platforms without sharing saves or purchases.</p>
+<h2>Update and verify the game</h2>
+<p>All players need compatible versions. Install game, console, launcher, and network-driver updates. On PC, verify files through the storefront if one title fails after a patch.</p>
+<p>Mods can cause version mismatch. Disable them and return to the standard branch for testing. Keep backups before changing a modded installation.</p>
+<h2>Check firewall and security software carefully</h2>
+<p>Allow the game and launcher through the operating-system firewall using their official executable files. Do not disable the firewall permanently. Third-party security suites may have separate network controls; consult their documentation.</p>
+<p>A virtual private network can increase latency or change region. Disconnect it for a test unless the game or local network specifically requires it. Do not install a gaming VPN based only on a promise to lower ping; the route may improve or worsen depending on location.</p>
+
+<h2>Do not change DNS unless name resolution is the problem</h2>
+<p>Public DNS services can help when the provider's resolver is failing or slow to find service addresses, but they do not shorten the physical route to a game server after the connection is established. Record the original automatic settings before testing. If changing DNS does not alter the error, return to the previous configuration rather than collecting permanent tweaks.</p>
+<h2>Separate controller trouble from network trouble</h2>
+<p>Delayed or missing input can feel like lag. Test the controller offline and review our guide to <a href="fix-controller-connection-problems.html">controller connection problems</a>. If local input is stable but other players teleport or actions roll back, the network is more likely.</p>
+<h2>Prepare a useful support report</h2>
+<p>Record the exact error, platform, game version, account type, region, connection type, NAT result, and time. State whether other games work and whether Ethernet changes the result. Do not post public IP addresses, account credentials, or router passwords.</p>
+<p>For a two-player game, verify all connection requirements from our <a href="best-co-op-games-for-two-players.html">co-op recommendations</a> before purchasing a second copy.</p>
+<p>Most multiplayer faults become manageable when you identify the layer. Check services first, compare devices, test Ethernet, review account permissions, and change router settings only with a documented reason.</p>

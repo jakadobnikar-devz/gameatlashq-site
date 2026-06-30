@@ -1,0 +1,33 @@
+
+<p>SteamOS began its current life as the operating system behind the Steam Deck, but Valve has been moving it toward more handhelds and ordinary gaming PCs. The change matters because it could provide a controller-friendly alternative to Windows for living-room systems, portable devices, and custom Steam Machines.</p>
+<p>It does not mean every PC can switch without compromise. Hardware support, anti-cheat, launchers, productivity software, and installation tools remain important limits.</p>
+<h2>What SteamOS is</h2>
+<p>SteamOS is a Linux-based operating system built around Steam's game interface. On the Steam Deck, it provides quick access to the library, controller navigation, power controls, suspend and resume, and a desktop mode. Proton translates many Windows games so they can run on Linux without a native Linux version.</p>
+<p>Compatibility is evaluated game by game. A title can launch but still have video, anti-cheat, launcher, controller, or performance problems. Valve's Deck Verified labels are useful for the Deck, but other hardware adds different drivers and controls.</p>
+<h2>Why expansion beyond the Deck matters</h2>
+<p>More supported hardware gives manufacturers and players an alternative to small-screen Windows. A consistent gaming interface can reduce setup friction and background overhead on handhelds. On a television PC, it can create an experience closer to a console while preserving access to much of a Steam library.</p>
+<p>Competition can also pressure every platform to improve controller navigation, suspend behaviour, updates, and performance. The benefit is not limited to people who leave Windows.</p>
+<h2>Valve is working on broader graphics support</h2>
+<p>In June 2026, The Verge reported that Valve was <a href="https://www.theverge.com/games/952634/valve-intel-nvidia-steamos-gpus-linux">working with Intel and Nvidia on broader SteamOS GPU support</a>. AMD hardware has been the simplest target because of the Linux graphics stack used by the Deck and several handhelds.</p>
+<p>Nvidia support was still under development, and Intel compatibility varied by hardware. A public report of engineering work is not a promise that every graphics card will be supported by a particular date.</p>
+<h2>Handhelds are the first obvious expansion point</h2>
+<p>Handheld PCs share the Deck's need for a controller-first interface, power management, on-screen keyboard, performance controls, and reliable suspend. SteamOS can feel more coherent than desktop Windows on a seven- or eight-inch display.</p>
+<p>However, Windows handhelds may run games that SteamOS cannot, especially titles with unsupported anti-cheat or store dependencies. Our comparison of <a href="handheld-gaming-pc-vs-gaming-laptop.html">handheld PCs and gaming laptops</a> explains why software compatibility should be checked before hardware performance.</p>
+<h2>Desktop SteamOS could support living-room PCs</h2>
+<p>A custom PC connected to a television can boot directly into a game library and use a controller for most tasks. This suits players who want a console-like machine with replaceable PC hardware.</p>
+<p>Desktop use still needs strong installer, display, audio, sleep, update, and peripheral support. People who rely on Adobe software, specialized work applications, certain virtual-reality systems, or Windows-only utilities may need a second operating system or another computer.</p>
+<h2>Anti-cheat remains a decisive limitation</h2>
+<p>Proton can run many Windows games, but kernel-level or developer-configured anti-cheat may block Linux. Support depends on the anti-cheat provider and game developer. A popular multiplayer title that does not work can outweigh hundreds of compatible single-player games for one buyer.</p>
+<p>Check current reports for every essential game. Do not assume that a game working on the Deck last year guarantees the same behaviour after an anti-cheat or launcher update.</p>
+<h2>Performance comparisons need controlled testing</h2>
+<p>SteamOS can outperform Windows in some games and lose in others. Drivers, shader caches, game versions, power limits, translation overhead, and background services affect the result. A single benchmark should not become a general claim that one operating system is faster.</p>
+<p>Frame-time consistency matters as much as average frame rate. Use the method in our <a href="fix-game-stutter-and-frame-pacing.html">stutter and frame-pacing guide</a> when comparing systems.</p>
+<h2>Installation should remain a cautious project</h2>
+<p>Back up personal files and saves before changing partitions or operating systems. Confirm Wi-Fi, audio, Bluetooth, graphics, sleep, and controller support for the exact hardware. Early general-purpose installers may be less forgiving than a normal console setup.</p>
+<p>Dual boot can preserve Windows compatibility, but it adds storage and boot-management complexity. Do not follow an unofficial installation video without understanding how to recover the original system.</p>
+<h2>Who should consider SteamOS</h2>
+<p>SteamOS is most attractive for a dedicated Steam library machine, compatible handheld, or living-room PC using well-supported controllers and games. It is less suitable as the only operating system for someone dependent on unsupported competitive games or Windows-specific work tools.</p>
+<p>Storage planning also matters because a second operating system and duplicate game installations consume capacity. Review our guide to <a href="how-much-ram-and-storage-for-gaming.html">RAM and storage for gaming</a> before partitioning a small SSD.</p>
+<h2>The larger significance</h2>
+<p>SteamOS expansion is not simply a Linux-versus-Windows contest. It is an attempt to make PC gaming fit more device shapes and usage patterns. If Valve can provide reliable installers, broad drivers, and clear compatibility information, players gain another credible way to build a gaming system.</p>
+<p>For now, treat SteamOS as a promising platform with specific strengths and gaps. Check the games and hardware you need, preserve a recovery path, and choose the operating system that creates less friction for your actual library.</p>

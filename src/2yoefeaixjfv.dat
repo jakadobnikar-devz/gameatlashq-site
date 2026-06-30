@@ -1,0 +1,33 @@
+
+<p>Memory and storage are often reduced to simple numbers, but capacity, speed, configuration, game type, background software, and upgrade options all matter. Buying too little can cause obvious limits. Buying far more than the system can use may take budget away from the graphics card, processor, display, or backup drive.</p>
+<p>For a new general-purpose gaming PC in 2027, 16 GB of system memory remains a practical starting point, while 32 GB provides more headroom for demanding games, creation tools, heavy modding, browsers, voice chat, and future use. Storage needs depend on how many large games you keep installed.</p>
+<h2>System minimums are not gaming recommendations</h2>
+<p>Microsoft lists 4 GB of RAM and 64 GB of storage among the minimum requirements for Windows 11. Those figures allow the operating system to run; they do not describe a comfortable modern gaming machine. The game, launcher, browser, voice application, recording tool, and operating system all share memory.</p>
+<p>Check the recommended requirements of the games you play. Minimum requirements may target low settings and limited performance, while recommended specifications are still not a guarantee for every resolution.</p>
+<h2>When 16 GB of RAM is enough</h2>
+<p>Sixteen gigabytes can support a large library of current games when the computer runs a clean background environment and the game does not recommend more. It is suitable for budget and mid-range systems, esports, older releases, independent games, and ordinary browsing alongside play.</p>
+<p>Use two matched memory modules when the platform benefits from dual-channel operation. A single module can reduce memory bandwidth, particularly on systems with integrated graphics that use system memory as video memory.</p>
+<h2>When 32 GB becomes sensible</h2>
+<p>Choose 32 GB when you play recent simulation or open-world games with high recommended requirements, use large mod collections, host servers, stream or record, edit media, run virtual machines, or keep many applications open. It also provides breathing room on a machine you expect to keep for several years.</p>
+<p>More memory does not automatically increase frame rate when 16 GB was already sufficient. Its main benefit is avoiding pressure, stutter, or application closure when total use exceeds available capacity.</p>
+<h2>Capacity is not the only memory specification</h2>
+<p>Memory type, supported speed, timings, ranks, and motherboard compatibility affect performance. Faster kits provide limited value if the processor or motherboard cannot use the profile reliably. Check the qualified memory list and firmware support before buying.</p>
+<p>Stability is more important than an aggressive speed. A memory overclock that passes a short benchmark can still corrupt files or crash games. Test thoroughly and return to supported settings if errors appear.</p>
+<h2>Do not confuse RAM with video memory</h2>
+<p>System RAM is used by the operating system and applications. Video memory sits on the graphics card and holds textures, frame buffers, geometry, and other graphics data. Adding system RAM does not increase dedicated video memory.</p>
+<p>Integrated graphics share system memory, so capacity and bandwidth matter more in those systems. Dedicated graphics cards can sometimes use system memory after video memory fills, but the transfer is slower and may cause stutter.</p>
+<h2>Choose SSD capacity around the installed library</h2>
+<p>A 1 TB SSD is a reasonable starting capacity for a gaming PC, but the usable space is lower after formatting, Windows, applications, updates, and recovery files. A few very large games can consume the remainder quickly. A 2 TB drive is more comfortable for players who keep several major releases installed or use the PC for media work.</p>
+<p>Check actual install sizes and leave free space for patches. Some updates require temporary working space close to the size of the game. A nearly full drive can make updates difficult and reduce performance on some SSDs.</p>
+<h2>Speed matters less after a sensible SSD baseline</h2>
+<p>Moving from a hard drive to a solid-state drive can greatly improve boot time, loading, and asset streaming. Moving from a good SATA SSD to the fastest advertised NVMe drive often produces a smaller visible difference in ordinary games.</p>
+<p>Buy a reliable SSD with an appropriate warranty, sufficient capacity, and supported interface before chasing peak sequential numbers. Random access, sustained behaviour, controller quality, and thermals matter too.</p>
+<h2>Plan separate backup capacity</h2>
+<p>Extra internal storage is not a backup. Save files, screenshots, recordings, configuration, and personal documents need another copy. Game installations can usually be downloaded again; original creative files and saves may not.</p>
+<p>Follow the process in <a href="protect-and-back-up-game-saves.html">protecting game saves</a> and keep at least one copy outside the active drive.</p>
+<h2>Check portable and compact-device limitations</h2>
+<p>Handheld PCs and thin laptops may use soldered memory that cannot be upgraded. Storage may use a smaller SSD format or require careful disassembly. Our comparison of <a href="handheld-gaming-pc-vs-gaming-laptop.html">handheld PCs and gaming laptops</a> explains why repairability and total storage are part of the purchase.</p>
+<p>MicroSD cards are useful for compatible games and media, but performance and endurance vary. Keep critical saves synchronized or backed up elsewhere.</p>
+<h2>Upgrade after measuring actual pressure</h2>
+<p>Use Task Manager or a reputable monitor during the games and applications you normally run. If memory is repeatedly near full and the system pages heavily, more RAM may help. If storage space forces constant uninstalling, more capacity may improve convenience. If stutter occurs with plenty of free memory, diagnose other causes using our <a href="fix-game-stutter-and-frame-pacing.html">frame-pacing guide</a>.</p>
+<p>For most new builds, 16 GB is the budget baseline, 32 GB is the comfortable general recommendation, and 1 to 2 TB of SSD storage fits many libraries. Treat those as planning ranges, then adjust using the exact games, workload, and upgrade path.</p>
