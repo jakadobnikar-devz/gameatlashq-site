@@ -59,7 +59,6 @@ def main():
     for filename in STATIC_PUBLIC:
         copy_required(ROOT / filename, PUBLIC / filename)
 
-    # Publish only the optimized site logo, not repository helper files or the large source PNG.
     copy_required(ROOT / "images/main-logo.webp", PUBLIC / "images/main-logo.webp")
 
     seen_slugs = set()
@@ -78,26 +77,41 @@ def main():
         if category_counts.get(category, 0) > 0:
             sitemap_urls.append(f"/{filename}")
 
-    # Blog posts are all generated from data/posts.json, which contains only live/due posts.
     blog_entries = [(f"/{post['url']}", post["date"]) for post in posts]
 
-    lines = ['<?xml version="1.0" encoding="UTF-8"?>',
-             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+    ]
     for path in sitemap_urls:
         lines.append(f"  <url><loc>{escape(SITE_URL + path)}</loc></url>")
     for path, date in blog_entries:
-        lines.append(f"  <url><loc>{escape(SITE_URL + path)}</loc><lastmod>{escape(date)}</lastmod></url>")
+        lines.append(
+            f"  <url><loc>{escape(SITE_URL + path)}</loc>"
+            f"<lastmod>{escape(date)}</lastmod></url>"
+        )
     lines.append("</urlset>")
-    (PUBLIC / "sitemap.xml").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
-    (PUBLIC / "robots.txt").write_text(
+    sitemap_path = PUBLIC / "sitemap.xml"
+    sitemap_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+    robots_path = PUBLIC / "robots.txt"
+    robots_path.write_text(
         "User-agent: *\nAllow: /\n\nSitemap: https://gameatlashq.com/sitemap.xml\n",
         encoding="utf-8",
     )
+
     (PUBLIC / ".nojekyll").touch()
+
+    if not sitemap_path.is_file() or sitemap_path.stat().st_size == 0:
+        raise RuntimeError("sitemap.xml was not created")
+    if not robots_path.is_file() or robots_path.stat().st_size == 0:
+        raise RuntimeError("robots.txt was not created")
 
     print(f"Prepared safe public artifact with {len(posts)} live posts.")
     print(f"Sitemap contains {len(sitemap_urls) + len(blog_entries)} indexable URLs.")
+    print(f"Created: {sitemap_path}")
+    print(f"Created: {robots_path}")
 
 
 if __name__ == "__main__":
