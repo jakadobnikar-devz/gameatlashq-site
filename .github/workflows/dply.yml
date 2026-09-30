@@ -9,10 +9,11 @@ on:
       - "src/**"
       - "templates/**"
       - "images/**"
+      - "*.html"
       - "*.py"
       - "*.json"
       - "requirements.txt"
-      - ".github/workflows/pages.yml"
+      - ".github/workflows/dply.yml"
   schedule:
     - cron: "18 13 */2 * *"
 
@@ -45,17 +46,15 @@ jobs:
         run: |
           python generate_blogs.py
           python build.py
+          python prepare_public.py
 
-      - name: Prepare Public Folder
+      - name: Verify Required Public Files
         run: |
-          rm -rf public
-          mkdir -p public
-
-          cp -r blogs public/
-          cp -r images public/
-          cp *.html public/
-
-          touch public/.nojekyll
+          test -s public/robots.txt
+          test -s public/sitemap.xml
+          test -s public/404.html
+          grep -q "https://gameatlashq.com/sitemap.xml" public/robots.txt
+          grep -q "<urlset" public/sitemap.xml
 
       - name: Inspect Published Files
         run: |
