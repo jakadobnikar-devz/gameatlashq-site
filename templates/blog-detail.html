@@ -5,11 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ post.excerpt }}">
     <meta name="theme-color" content="#080b10">
+    <link rel="canonical" href="https://gameatlashq.com/blogs/{{ post.slug }}.html">
     <meta property="og:type" content="article">
     <meta property="og:title" content="{{ post.title }}">
     <meta property="og:description" content="{{ post.excerpt }}">
-    <meta property="og:image" content="../images/{{ post.image }}">
-    <title>{{ post.title }} | GameAtlas HQ</title>
+    <meta property="og:image" content="https://gameatlashq.com/images/{{ post.image }}">
+    <meta property="og:url" content="https://gameatlashq.com/blogs/{{ post.slug }}.html">
+    <meta property="og:site_name" content="GameAtlas HQ">
+    <meta property="article:published_time" content="{{ post.date_str }}">
+    <title>{{ post.seo_title }}</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": {{ post.title | tojson }},
+      "description": {{ post.excerpt | tojson }},
+      "datePublished": "{{ post.date_str }}",
+      "dateModified": "{{ post.date_str }}",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://gameatlashq.com/blogs/{{ post.slug }}.html"
+      },
+      "image": "https://gameatlashq.com/images/{{ post.image }}",
+      "author": {"@type": "Organization", "name": "GameAtlas HQ"},
+      "publisher": {"@type": "Organization", "name": "GameAtlas HQ", "url": "https://gameatlashq.com/"}
+    }
+    </script>
     <style>
 :root {
     --bg: #080b10;
@@ -559,11 +580,11 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
             <p>Guides, reviews and practical advice</p>
         </section>
         <section class="site-shell masthead">
-            <a class="brand" href="../index.html" aria-label="GameAtlas HQ home">
-                <img class="main-logo" src="../images/main-logo.png" alt="GameAtlas HQ" width="360" height="72">
+            <a class="brand" href="/" aria-label="GameAtlas HQ home">
+                <img class="main-logo" src="../images/main-logo.webp" alt="GameAtlas HQ" width="360" height="72">
             </a>
             <nav class="primary-nav" aria-label="Primary navigation">
-                <a href="../index.html">Home</a>
+                <a href="/">Home</a>
                 <a href="../about-GAHQ.html">About</a>
                 <a href="../gaming-glossary.html">Gaming Glossary</a>
                 <a href="../editorial-policy.html">Editorial Policy</a>
@@ -581,12 +602,12 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
         </section>
     </header>
     <main id="main-content" class="site-shell article-main">
-        <a class="return-link" href="../index.html">Return</a>
+        <a class="return-link" href="/">Return</a>
         <article data-slug="{{ post.slug }}">
             <header class="article-header">
                 <p class="story-meta">
                     <span class="category-label">{{ post.category }}</span>
-                    <time>{{ post.date.strftime("%d. %B %Y") }}</time>
+                    <time datetime="{{ post.date_str }}">{{ post.date_display }}</time>
                 </p>
                 <h1>{{ post.title }}</h1>
                 <p class="article-deck">{{ post.excerpt }}</p>
@@ -616,8 +637,8 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
     <footer class="site-footer">
         <section class="site-shell footer-grid">
             <section class="footer-brand">
-                <a class="brand" href="../index.html" aria-label="GameAtlas HQ home">
-                <img class="main-logo" src="../images/main-logo.png" alt="GameAtlas HQ" width="300" height="64" loading="lazy">
+                <a class="brand" href="/" aria-label="GameAtlas HQ home">
+                <img class="main-logo" src="../images/main-logo.webp" alt="GameAtlas HQ" width="300" height="64" loading="lazy">
             </a>
                 <p>An independent editorial gaming publication covering useful guides, practical tips, considered reviews, recommendations and gaming gear.</p>
             </section>

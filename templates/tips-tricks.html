@@ -10,6 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ page_description | default('Gaming guides, practical tips, reviews, recommendations, gear advice and relevant gaming news from GameAtlas HQ.') }}">
     <meta name="theme-color" content="#080b10">
+    <link rel="canonical" href="https://gameatlashq.com/tips-tricks.html">
+    {% if not visible_posts %}<meta name="robots" content="noindex, follow">{% endif %}
     <title>{{ page_title }} | GameAtlas HQ</title>
     <style>
 :root {
@@ -560,11 +562,11 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
             <p>Guides, reviews and practical advice</p>
         </section>
         <section class="site-shell masthead">
-            <a class="brand" href="index.html" aria-label="GameAtlas HQ home">
-                <img class="main-logo" src="images/main-logo.png" alt="GameAtlas HQ" width="360" height="72">
+            <a class="brand" href="/" aria-label="GameAtlas HQ home">
+                <img class="main-logo" src="images/main-logo.webp" alt="GameAtlas HQ" width="360" height="72">
             </a>
             <nav class="primary-nav" aria-label="Primary navigation">
-                <a href="index.html">Home</a>
+                <a href="/">Home</a>
                 <a href="about-GAHQ.html">About</a>
                 <a href="gaming-glossary.html">Gaming Glossary</a>
                 <a href="editorial-policy.html">Editorial Policy</a>
@@ -611,7 +613,7 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
                                     <header>
                                         <p class="story-meta">
                                             <span class="category-label">{{ post.category }}</span>
-                                            <time>{{ post.date.strftime("%d. %B %Y") }}</time>
+                                            <time datetime="{{ post.date_str }}">{{ post.date_display }}</time>
                                         </p>
                                         <h3>{{ post.title }}</h3>
                                     </header>
@@ -657,7 +659,7 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
                                         <article>
                                             <figure class="newsroom-media"><img src="images/{{ post.image }}" alt="{{ post.title }}" loading="lazy"></figure>
                                             <section class="newsroom-copy">
-                                                <header><p class="story-meta"><span class="category-label">{{ post.category }}</span><time>{{ post.date.strftime("%d. %B %Y") }}</time></p><h3>{{ post.title }}</h3></header>
+                                                <header><p class="story-meta"><span class="category-label">{{ post.category }}</span><time datetime="{{ post.date_str }}">{{ post.date_display }}</time></p><h3>{{ post.title }}</h3></header>
                                                 <p>{{ post.excerpt }}</p><span class="read-prompt">Read article</span>
                                             </section>
                                         </article>
@@ -672,7 +674,7 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
                             <header class="category-feed-header"><section><h2 id="guides-feed">Guides</h2><p>Walkthroughs, solutions, builds and practical troubleshooting instructions.</p></section><a class="section-link" href="guides.html">View all</a></header>
                             <section class="category-feed-grid">
                                 {% for post in guides_posts[:4] %}
-                                    <a class="feed-card" href="blogs/{{ post.slug }}.html" data-category="{{ post.category }}" aria-label="Read {{ post.title }}"><article><figure class="newsroom-media"><img src="images/{{ post.image }}" alt="{{ post.title }}" loading="lazy"></figure><section class="newsroom-copy"><header><p class="story-meta"><span class="category-label">{{ post.category }}</span><time>{{ post.date.strftime("%d. %B %Y") }}</time></p><h3>{{ post.title }}</h3></header><p>{{ post.excerpt }}</p><span class="read-prompt">Read article</span></section></article></a>
+                                    <a class="feed-card" href="blogs/{{ post.slug }}.html" data-category="{{ post.category }}" aria-label="Read {{ post.title }}"><article><figure class="newsroom-media"><img src="images/{{ post.image }}" alt="{{ post.title }}" loading="lazy"></figure><section class="newsroom-copy"><header><p class="story-meta"><span class="category-label">{{ post.category }}</span><time datetime="{{ post.date_str }}">{{ post.date_display }}</time></p><h3>{{ post.title }}</h3></header><p>{{ post.excerpt }}</p><span class="read-prompt">Read article</span></section></article></a>
                                 {% endfor %}
                             </section>
                         </section>
@@ -683,7 +685,7 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
                             <header class="category-feed-header"><section><h2 id="tips-feed">Tips &amp; Tricks</h2><p>Strategies, hidden mechanics and practical advice for playing more effectively.</p></section><a class="section-link" href="tips-tricks.html">View all</a></header>
                             <section class="category-feed-grid">
                                 {% for post in tips_posts[:4] %}
-                                    <a class="feed-card" href="blogs/{{ post.slug }}.html" data-category="{{ post.category }}" aria-label="Read {{ post.title }}"><article><figure class="newsroom-media"><img src="images/{{ post.image }}" alt="{{ post.title }}" loading="lazy"></figure><section class="newsroom-copy"><header><p class="story-meta"><span class="category-label">{{ post.category }}</span><time>{{ post.date.strftime("%d. %B %Y") }}</time></p><h3>{{ post.title }}</h3></header><p>{{ post.excerpt }}</p><span class="read-prompt">Read article</span></section></article></a>
+                                    <a class="feed-card" href="blogs/{{ post.slug }}.html" data-category="{{ post.category }}" aria-label="Read {{ post.title }}"><article><figure class="newsroom-media"><img src="images/{{ post.image }}" alt="{{ post.title }}" loading="lazy"></figure><section class="newsroom-copy"><header><p class="story-meta"><span class="category-label">{{ post.category }}</span><time datetime="{{ post.date_str }}">{{ post.date_display }}</time></p><h3>{{ post.title }}</h3></header><p>{{ post.excerpt }}</p><span class="read-prompt">Read article</span></section></article></a>
                                 {% endfor %}
                             </section>
                         </section>
@@ -694,7 +696,7 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
                             <header class="category-feed-header"><section><h2 id="best-games-feed">Best Games</h2><p>Focused recommendations by platform, genre, budget and play style.</p></section><a class="section-link" href="best-games.html">View all</a></header>
                             <section class="category-feed-grid">
                                 {% for post in best_games_posts[:4] %}
-                                    <a class="feed-card" href="blogs/{{ post.slug }}.html" data-category="{{ post.category }}" aria-label="Read {{ post.title }}"><article><figure class="newsroom-media"><img src="images/{{ post.image }}" alt="{{ post.title }}" loading="lazy"></figure><section class="newsroom-copy"><header><p class="story-meta"><span class="category-label">{{ post.category }}</span><time>{{ post.date.strftime("%d. %B %Y") }}</time></p><h3>{{ post.title }}</h3></header><p>{{ post.excerpt }}</p><span class="read-prompt">Read article</span></section></article></a>
+                                    <a class="feed-card" href="blogs/{{ post.slug }}.html" data-category="{{ post.category }}" aria-label="Read {{ post.title }}"><article><figure class="newsroom-media"><img src="images/{{ post.image }}" alt="{{ post.title }}" loading="lazy"></figure><section class="newsroom-copy"><header><p class="story-meta"><span class="category-label">{{ post.category }}</span><time datetime="{{ post.date_str }}">{{ post.date_display }}</time></p><h3>{{ post.title }}</h3></header><p>{{ post.excerpt }}</p><span class="read-prompt">Read article</span></section></article></a>
                                 {% endfor %}
                             </section>
                         </section>
@@ -705,7 +707,7 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
                             <header class="category-feed-header"><section><h2 id="reviews-feed">Reviews</h2><p>Direct assessments of games, downloadable content, services and hardware.</p></section><a class="section-link" href="reviews.html">View all</a></header>
                             <section class="category-feed-grid">
                                 {% for post in reviews_posts[:4] %}
-                                    <a class="feed-card" href="blogs/{{ post.slug }}.html" data-category="{{ post.category }}" aria-label="Read {{ post.title }}"><article><figure class="newsroom-media"><img src="images/{{ post.image }}" alt="{{ post.title }}" loading="lazy"></figure><section class="newsroom-copy"><header><p class="story-meta"><span class="category-label">{{ post.category }}</span><time>{{ post.date.strftime("%d. %B %Y") }}</time></p><h3>{{ post.title }}</h3></header><p>{{ post.excerpt }}</p><span class="read-prompt">Read article</span></section></article></a>
+                                    <a class="feed-card" href="blogs/{{ post.slug }}.html" data-category="{{ post.category }}" aria-label="Read {{ post.title }}"><article><figure class="newsroom-media"><img src="images/{{ post.image }}" alt="{{ post.title }}" loading="lazy"></figure><section class="newsroom-copy"><header><p class="story-meta"><span class="category-label">{{ post.category }}</span><time datetime="{{ post.date_str }}">{{ post.date_display }}</time></p><h3>{{ post.title }}</h3></header><p>{{ post.excerpt }}</p><span class="read-prompt">Read article</span></section></article></a>
                                 {% endfor %}
                             </section>
                         </section>
@@ -716,7 +718,7 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
                             <header class="category-feed-header"><section><h2 id="gear-feed">Gaming Gear</h2><p>Buying advice, comparisons and setup guidance for gaming equipment.</p></section><a class="section-link" href="gaming-gear.html">View all</a></header>
                             <section class="category-feed-grid">
                                 {% for post in gear_posts[:4] %}
-                                    <a class="feed-card" href="blogs/{{ post.slug }}.html" data-category="{{ post.category }}" aria-label="Read {{ post.title }}"><article><figure class="newsroom-media"><img src="images/{{ post.image }}" alt="{{ post.title }}" loading="lazy"></figure><section class="newsroom-copy"><header><p class="story-meta"><span class="category-label">{{ post.category }}</span><time>{{ post.date.strftime("%d. %B %Y") }}</time></p><h3>{{ post.title }}</h3></header><p>{{ post.excerpt }}</p><span class="read-prompt">Read article</span></section></article></a>
+                                    <a class="feed-card" href="blogs/{{ post.slug }}.html" data-category="{{ post.category }}" aria-label="Read {{ post.title }}"><article><figure class="newsroom-media"><img src="images/{{ post.image }}" alt="{{ post.title }}" loading="lazy"></figure><section class="newsroom-copy"><header><p class="story-meta"><span class="category-label">{{ post.category }}</span><time datetime="{{ post.date_str }}">{{ post.date_display }}</time></p><h3>{{ post.title }}</h3></header><p>{{ post.excerpt }}</p><span class="read-prompt">Read article</span></section></article></a>
                                 {% endfor %}
                             </section>
                         </section>
@@ -745,8 +747,8 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
     <footer class="site-footer">
         <section class="site-shell footer-grid">
             <section class="footer-brand">
-                <a class="brand" href="index.html" aria-label="GameAtlas HQ home">
-                <img class="main-logo" src="images/main-logo.png" alt="GameAtlas HQ" width="300" height="64" loading="lazy">
+                <a class="brand" href="/" aria-label="GameAtlas HQ home">
+                <img class="main-logo" src="images/main-logo.webp" alt="GameAtlas HQ" width="300" height="64" loading="lazy">
             </a>
                 <p>An independent editorial gaming publication covering useful guides, practical tips, considered reviews, recommendations and gaming gear.</p>
             </section>
